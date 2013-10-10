@@ -1,0 +1,20 @@
+<h1>Demo#Hello</h1>
+<p>Alyssa smells like poo</p>
+
+ID: <%= @id %><br />
+Next Page: <%= @page + 1 %>
+<br />
+
+1 + 1 is <%= 1 + 1 %><br />
+<%= link_to("My first link", {:controller => 'demo', :action => 'index'})%><br />
+<% target = "world" %>
+
+<%= "hello #{target}" %><br />
+
+<% @array.each do |n| %>
+  <%= n %><br />
+<% end %>
+
+<hr />
+
+<%= params.inspect %>
