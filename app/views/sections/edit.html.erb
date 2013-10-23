@@ -1,13 +1,14 @@
 <%= link_to("<< Back to List", {action: 'list'}, class: 'back-link') %>
-<div class="subject show">
-	<h2>Create Subject</h2>
+
+<div class="section edit">
+	<h2>Update Section</h2>
 	
-	<%= form_for(:subject, :url => {action: 'create'}) do |f| %>
+	<%= form_for(:section, :url => {action: 'update', :id => @section.id}) do |f| %>
 	
 	<%= render(:partial => "shared/form", :locals => {:f => f}) %>
 	
 	<div class="form-button">
-		<%= submit_tag("Create Subject") %>
+		<%= submit_tag("Update Section") %>
 	</div>
 	
 	<% end %>

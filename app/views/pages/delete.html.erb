@@ -1,0 +1,15 @@
+<div class="page delete">
+	<h2>Delete Page</h2>
+	
+	<%= form_for(:page, :url => {action: 'destroy', id: @page.id}) do |f| %>
+	<p>Are you sure you want to permanently delete this page?</p>
+	
+	<p><%= @page.name %></p>
+	
+	<div class="form-button">
+		<%= submit_tag("Destroy Page")%>
+	</div>
+	
+	<% end %>
+</div>
+	

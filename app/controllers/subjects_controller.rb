@@ -1,5 +1,7 @@
 class SubjectsController < ApplicationController
   
+  layout 'admin'
+  
   def index
     list
     render('list')
@@ -38,6 +40,7 @@ class SubjectsController < ApplicationController
       flash[:notice] = "Subject Updated."
       redirect_to(action: 'show', id: @subject.id)
     else
+      flash[:notice] = "Error: No Update Applied."
       render('edit')
     end
   end
