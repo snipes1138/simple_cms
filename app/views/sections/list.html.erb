@@ -2,6 +2,7 @@
 <div class="list">
 	<h2>Sections</h2>
 	<%= link_to("Add Section", {action: 'new'}, class: 'action new')%>
+	<div><%= pluralize(@sections.length, 'section') %> found</div>
 	
 	<table class="action list">
 		<tr>
@@ -11,11 +12,11 @@
 			<th>Actions</th>
 		</tr>
 		
-		<tr>
+		<tr class="<%= cycle('odd', 'even') %>">
 			<% @sections.each do |section| %>
 			<td><%= section.position %></td>
 			<td><%= section.name %></td>
-			<td class='center'><%= section.visible ? 'Yes' : 'No' %></td>
+			<td class='center'><%= status_tag(section.visible) %></td>
 			<td class='action'>
 				<%= link_to('show', {action: 'show', id: section.id}, class: 'action show') %>
 				<%= link_to('edit', {action: 'edit', id: section.id}, class: 'action edit') %>

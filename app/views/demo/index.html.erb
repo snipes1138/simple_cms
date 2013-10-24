@@ -1,8 +1,18 @@
 <h1>Home Page</h1>
 <p>Welcome to my super awesome website</p>
 
-<h2>Links</h2>
-<p><%= link_to("Subjects", {controller: 'subjects', action: 'list'}) %></p>
-<p><%= link_to("Pages", {controller: 'pages', action: 'list'}) %></p>
-<p><%= link_to("Sections", {controller: 'sections', action: 'list'}) %></p>
 
+
+<table border="1">
+	<tr>
+		<th><h2>Links</h2></th>
+	</tr>
+	<tr>
+		<td><%= image_tag('kerrigan.jpg', :size => '352x172', :alt => "its me bitch") %></td>
+		<td><p><%= link_to("Subjects", {controller: 'subjects', action: 'list'}) %></p>
+			<p><%= link_to("Pages", {controller: 'pages', action: 'list'}) %></p>
+			<p><%= link_to("Sections", {controller: 'sections', action: 'list'}) %></p></td>
+		</tr>
+
+		
+</table>

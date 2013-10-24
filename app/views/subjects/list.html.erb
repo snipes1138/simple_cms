@@ -2,6 +2,8 @@
 <div class="list">
 	<h2>Subjects</h2>
 	<%= link_to("Add Subject", {action: 'new'}, class: 'action new') %>
+	<div><%= pluralize(@subjects.length, 'subject') %> found</div>
+	
 	<table class="listing">
 		<tr class="header">
 			<th>&nbsp;</th>
@@ -11,10 +13,10 @@
 			<th>Actions</th>
 		</tr>
 		<% @subjects.each do |subject| %>
-		<tr>
+		<tr class="<%= cycle('odd', 'even') %>">
 			<td><%= subject.position %></td>
 			<td><%= subject.name %></td>
-			<td class="center"><%= subject.visible ? 'Yes' : 'No' %></td>
+			<td class="center"><%= status_tag(subject.visible) %></td>
 			<td class="center"><%= subject.pages.size %></td>
 			<td class="action">
 				<%= link_to("Show", {action: 'show', id: subject.id}, class: 'action show') %>
